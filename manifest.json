@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Tabs Keeper",
+    "version": "1.0",
+    "description": "Save your browser environment and open multiple tabs with one click",
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "48": "Tabs_Keeper.png",
+      "128": "Tabs_Keeper.png"
+    }
+  }

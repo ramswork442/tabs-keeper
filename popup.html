@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tab Keeper</title>
+    <style>
+      body {
+        width: 400px;
+        padding: 16px;
+        font-family: "Segoe UI", Roboto, sans-serif;
+        background-color: #1e1e2f;
+        color: #f5f5f5;
+        border-radius: 12px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 12px;
+        color: #ffffff;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .create-container {
+        background-color: #2a2a3d;
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .create-container input {
+        width: calc(50% - 6px);
+        background-color: #33334d;
+        border: 1px solid #444;
+        color: #fff;
+        padding: 8px;
+        margin: 4px 0;
+        border-radius: 8px;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: #6c63ff;
+      }
+
+      .link-item {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        background-color: #2c2c3e;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 6px;
+        box-shadow: 0 1px 4px rgba(255, 255, 255, 0.05);
+      }
+
+      .link-item input {
+        flex: 1;
+        background-color: #3b3b54;
+        border: none;
+        color: #f5f5f5;
+        padding: 6px 8px;
+        border-radius: 6px;
+        outline: none;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      #addLink {
+        background: linear-gradient(to right, #6c63ff, #7c75ff);
+        color: #fff;
+      }
+
+      #addLink:hover {
+        background: linear-gradient(to right, #7c75ff, #6c63ff);
+      }
+
+      .delete-btn {
+        background-color: #ff4c4c;
+        color: white;
+        font-size: 16px;
+        padding: 4px 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .delete-btn:hover {
+        background-color: #e63946;
+      }
+
+      #openAll {
+        background: linear-gradient(to right, #00c9ff, #92fe9d);
+        color: #000;
+        font-weight: bold;
+      }
+
+      #openAll:hover {
+        background: linear-gradient(to right, #92fe9d, #00c9ff);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Tab Organizer</h2>
+      <div class="create-container">
+        <input type="text" id="nameInput" placeholder="e.g., Youtube" />
+        <input
+          type="text"
+          id="urlInput"
+          placeholder="URL (e.g., https://youtube.com)"
+        />
+        <button id="addLink">Add Link</button>
+      </div>
+      <div id="linkList">
+        <input
+          type="text"
+          value="${link.name}"
+          data-index="${index}"
+          class="name-edit"
+        />
+        <input
+          type="text"
+          value="${link.url}"
+          data-index="${index}"
+          class="url-edit"
+        />
+        <button class="delete-btn" data-index="${index}">🗑️</button>
+      </div>
+      <button id="openAll">Open All Tabs</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
